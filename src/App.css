@@ -16,7 +16,7 @@ body {
 	padding: 15px;
 	border-radius: 20px;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s;
+	transition: all 0.2s;
 }
 
 .image {
@@ -33,24 +33,40 @@ body {
 
 .name {
 	width: 100%;
-  font-weight: 600;
-  line-height: 32px;
+	font-weight: 600;
+	line-height: 32px;
 }
 
 .color {
 	width: 100%;
-  font-size: 14px;
-  color: #999;
+	font-size: 14px;
+	color: #999;
 }
 
 .size {
 	width: 100%;
-  font-size: 14px;
-  color: green;
+	font-size: 14px;
+	color: green;
 }
 
 .price {
-  font-size: 14px;
+	font-size: 14px;
 	width: 100%;
-  font-weight: 600;
+	font-weight: 600;
+}
+
+.btn-buy {
+	margin: 10px 0;
+	border-radius: 5px;
+	border: none;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 10px 20px;
+	width: 100%;
+	background: #09f;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+}
+.btn-buy:hover {
+	background: #08f;
 }
