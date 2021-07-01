@@ -1,70 +1,79 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
-	let shirts = [];
+	const [shirt, updateShirt] = useState({
+		name: "Ten ao",
+		price: "0",
+		desc: "Mo ta",
+		image: "https://sieuthihangmy.com.vn/upload/images/san_pham/2020-05/image0-1590546577.jpg",
+		target: {
+			value: 'abc'
+		}
+	});
 
-	useEffect(() => {});
-
-	// define a variable named count using useState hook
-	// initialize value as 0
-	// define updateCount as a function to update the count variable
-	let [count, updateCount] = useState(0);
-
-	let count2 = 0;
-
-	let buy = (shirt) => {
-		alert(`You bought a ${shirt.name}!`);
+	const update = (field, event) => {
+		const tmp = JSON.parse(JSON.stringify(shirt));
+		tmp[field] = event.target.value;
+		updateShirt(tmp);
 	};
-	// function buy() {}
 
 	return (
 		<div className="App">
-			<header className="App-header">
-				<h2>My products</h2>
-				<div>Cart {count}</div>
-				<div>Cart 2 {count2}</div>
-				<button
-					onClick={() => {
-						updateCount(count + 1);
-					}}
-				>
-					Increase count
-				</button>
-				<button
-					onClick={() => {
-						count2 += 1;
-					}}
-				>
-					Increase count 2
-				</button>
-
-				<div className="list">
-					{shirts.map((shirt) => {
-						return (
-							<div key={shirt.name} className="shirt">
-								<div
-									className="image"
-									style={{ background: `url(${shirt.image})` }}
-								></div>
-								<div className="name">{shirt.name}</div>
-								<div className="color">{shirt.color}</div>
-								<div className="size">{shirt.size}</div>
-								<div className="price">{shirt.price} VNĐ</div>
-								<button
-									onMouseOver={() => {
-										buy(shirt);
-									}}
-									className="btn-buy"
-								>
-									Mua hàng
-								</button>
-							</div>
-						);
-					})}
-				</div>
+			<header className="header">
+				<h2> Edit shirt </h2> <Button> Go Home! </Button>
 			</header>
+
+			<div className="container">
+				<div className="preview">
+					<div className="image" style={{ background: `url(${shirt.image})` }}></div>
+					<div className="name"> {shirt.name} </div>
+					<div className="price">
+						{shirt.price}
+						vnđ
+					</div>
+					<div className="desc"> {shirt.desc} </div>
+				</div>
+				<div className="edit">
+					<h3 className="label">Chỉnh sửa</h3>
+
+					<input
+						value={shirt.name}
+						className="edit-name"
+						placeholder="Name"
+						onChange={(e) => {
+							update("name", e);
+						}}
+					/>
+					<input
+						value={shirt.price}
+						className="edit-price"
+						placeholder="Price"
+						onChange={(e) => {
+							update("price", e);
+						}}
+					/>
+					<input
+						value={shirt.desc}
+						className="edit-desc"
+						placeholder="Description"
+						onChange={(e) => {
+							update("desc", e);
+						}}
+					/>
+					<input
+						value={shirt.image}
+						className="edit-image"
+						placeholder="Image Url"
+						onChange={(e) => {
+							update("image", e);
+						}}
+					/>
+				</div>
+			</div>
 		</div>
 	);
 }
