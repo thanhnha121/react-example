@@ -1,72 +1,69 @@
 body {
-	width: 800px;
-	padding: 0;
-	margin: 0 auto;
+  width: 800px;
+  padding: 20px;
+  margin: 0 auto !important;
 }
 
-.list {
-	width: 100%;
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
 }
 
-.shirt {
-	width: 200px;
-	float: left;
-	margin-right: 20px;
-	margin-bottom: 20px;
-	padding: 15px;
-	border-radius: 20px;
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-	transition: all 0.2s;
+h3 {
+    color: #333;
 }
 
-.image {
-	width: 200px;
-	height: 240px;
-	border-radius: 10px;
-	background-position: center !important;
-	background-size: cover !important;
+.container {
+  padding: 0;
+  width: 100%;
+  padding: 20px;
 }
 
-.shirt:hover {
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+.preview {
+  float: left;
+  width: 50%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  line-height: 32px;
 }
 
 .name {
-	width: 100%;
-	font-weight: 600;
-	line-height: 32px;
-}
-
-.color {
-	width: 100%;
-	font-size: 14px;
-	color: #999;
-}
-
-.size {
-	width: 100%;
-	font-size: 14px;
-	color: green;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .price {
-	font-size: 14px;
-	width: 100%;
-	font-weight: 600;
+  font-size: 16px;
+  color: red;
 }
 
-.btn-buy {
-	margin: 10px 0;
-	border-radius: 5px;
-	border: none;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	padding: 10px 20px;
-	width: 100%;
-	background: #09f;
-	color: #fff;
-	font-size: 16px;
-	cursor: pointer;
+.desc {
+  color: #999;
 }
-.btn-buy:hover {
-	background: #08f;
+
+.image {
+  width: 100%;
+  height: 350px;
+  display: inline-block;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.edit {
+  float: left;
+  width: 50%;
+  padding: 30px;
+}
+
+.edit-name,
+.edit-price,
+.edit-desc,
+.edit-image {
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
